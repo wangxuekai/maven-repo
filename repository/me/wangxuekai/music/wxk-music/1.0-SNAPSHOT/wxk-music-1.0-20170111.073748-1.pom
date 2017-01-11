@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>me.wangxuekai.music</groupId>
+    <artifactId>wxk-music</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>wxk-music</name>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <junit.version>4.12</junit.version>
+        <httpclient.version>4.5.2</httpclient.version>
+
+        <wxk.music.test.version>1.0-SNAPSHOT</wxk.music.test.version>
+        <wxk.music.facade.version>1.0-SNAPSHOT</wxk.music.facade.version>
+        <wxk.music.biz.version>1.0-SNAPSHOT</wxk.music.biz.version>
+        <wxk.music.service.version>1.0-SNAPSHOT</wxk.music.service.version>
+        <wxk.music.dal.version>1.0-SNAPSHOT</wxk.music.dal.version>
+        <wxk.music.util.version>1.0-SNAPSHOT</wxk.music.util.version>
+        <wxk.music.web.version>1.0-SNAPSHOT</wxk.music.web.version>
+        <wxk.music.integration.version>1.0-SNAPSHOT</wxk.music.integration.version>
+
+        <springframework.version>4.2.6.RELEASE</springframework.version>
+        <apache.version>3.4</apache.version>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.21</slf4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--self depends-->
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-facade</artifactId>
+                <version>${wxk.music.facade.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-test</artifactId>
+                <version>${wxk.music.test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-biz</artifactId>
+                <version>${wxk.music.biz.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-dal</artifactId>
+                <version>${wxk.music.dal.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-service</artifactId>
+                <version>${wxk.music.service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-integration</artifactId>
+                <version>${wxk.music.integration.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-util</artifactId>
+                <version>${wxk.music.util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.wangxuekai.music</groupId>
+                <artifactId>wxk-music-web</artifactId>
+                <version>${wxk.music.web.version}</version>
+            </dependency>
+
+            <!--springframework 依赖-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+
+            <!--slf4j 依赖-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <!-- log4j 依赖 -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <!--apache 依赖-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.version}</version>
+            </dependency>
+            <!--httpclient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+
+            <!--junit测试-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.1.41</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>wxk-music</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>utf8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--modules-->
+    <modules>
+        <module>wxk-music-facade</module>
+        <module>wxk-music-biz</module>
+        <module>wxk-music-service</module>
+        <module>wxk-music-web</module>
+        <module>wxk-music-util</module>
+        <module>wxk-music-test</module>
+        <module>wxk-music-dal</module>
+        <module>wxk-music-integration</module>
+    </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>wangxuekai-mvn-repo</id>
+            <url>file:/home/wangxuekai/code/maven-repo/repository/</url>
+        </repository>
+    </distributionManagement>
+
+</project>

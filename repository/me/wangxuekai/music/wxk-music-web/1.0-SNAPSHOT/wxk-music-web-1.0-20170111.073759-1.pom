@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wxk-music</artifactId>
+        <groupId>me.wangxuekai.music</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>wxk-music-web</artifactId>
+    <packaging>war</packaging>
+    <name>web Desc</name>
+
+    <dependencies>
+
+        <!--self dependency-->
+        <dependency>
+            <groupId>me.wangxuekai.music</groupId>
+            <artifactId>wxk-music-facade</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>me.wangxuekai.music</groupId>
+            <artifactId>wxk-music-biz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>me.wangxuekai.music</groupId>
+            <artifactId>wxk-music-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>me.wangxuekai.music</groupId>
+            <artifactId>wxk-music-integration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>me.wangxuekai.music</groupId>
+            <artifactId>wxk-music-util</artifactId>
+        </dependency>
+
+        <!--springframework dependency-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>wxk-music-web</finalName>
+        <plugins>
+            <!-- jetty自动部署插件 -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.6.v20141205</version>
+                <configuration>
+                    <stopPort>9966</stopPort>
+                    <stopKey>foo</stopKey>
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <scanTargetPatterns>
+                        <scanTargetPattern>
+                            <directory>src/main/webapp/WEB-INF</directory>
+                            <excludes>
+                                <exclude>**/*.jsp</exclude>
+                            </excludes>
+                            <includes>
+                                <include>**/*.properties</include>
+                                <include>**/*.xml</include>
+                            </includes>
+                        </scanTargetPattern>
+                    </scanTargetPatterns>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
