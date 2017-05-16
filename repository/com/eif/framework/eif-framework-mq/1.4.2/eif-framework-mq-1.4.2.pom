@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.eif.framework</groupId>
+		<artifactId>eif-framework-parent</artifactId>
+		<version>1.4.2</version>
+	</parent>
+
+	<artifactId>eif-framework-mq</artifactId>
+	<packaging>jar</packaging>
+	<name>mq client</name>
+
+	<dependencies>
+		<!-- ==================== eif ==================== -->
+		<dependency>
+			<groupId>com.eif.framework</groupId>
+			<artifactId>eif-framework-log</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.eif.framework</groupId>
+					<artifactId>eif-framework-mybatis-pagination</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.eif.framework</groupId>
+			<artifactId>eif-framework-cache</artifactId>
+		</dependency>		
+		
+		<dependency>
+			<groupId>com.eif.framework</groupId>
+			<artifactId>eif-framework-kv</artifactId>
+		</dependency>				
+
+		<!-- ==================== middleware ==================== -->
+		<!-- rmq -->
+		<dependency>
+			<groupId>com.alibaba.rocketmq</groupId>
+			<artifactId>rocketmq-client</artifactId>
+		</dependency>
+
+		<!-- ==================== spring ==================== -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.eif.framework</groupId>
+		<artifactId>eif-framework-parent</artifactId>
+		<version>1.4.2</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>eif-framework-data</artifactId>
+	<packaging>jar</packaging>
+	<name>data component</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- ==================== commons ==================== -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+
+		<!-- ==================== spring ==================== -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>org.springframework</groupId> 
+			<artifactId>spring-core</artifactId> <scope>provided</scope> </dependency> 
+			<dependency> <groupId>org.springframework</groupId> <artifactId>spring-beans</artifactId> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>org.springframework</groupId> 
+			<artifactId>spring-aop</artifactId> <scope>provided</scope> </dependency> 
+			<dependency> <groupId>org.springframework</groupId> <artifactId>spring-tx</artifactId> 
+			<scope>provided</scope> </dependency> -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons</artifactId>
+		</dependency>
+
+		<!-- ==================== log ==================== -->
+		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>ch.qos.logback</groupId> 
+			<artifactId>logback-classic</artifactId> <scope>provided</scope> </dependency> -->
+
+		<!-- ==================== test ==================== -->
+		<dependency>
+			<groupId>com.eif.framework</groupId>
+			<artifactId>eif-framework-test</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

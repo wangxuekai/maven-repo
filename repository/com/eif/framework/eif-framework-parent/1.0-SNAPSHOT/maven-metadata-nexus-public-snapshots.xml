@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.eif.framework</groupId>
+  <artifactId>eif-framework-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20160218.072805</timestamp>
+      <buildNumber>30</buildNumber>
+    </snapshot>
+    <lastUpdated>20160218072805</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20160218.072805-30</value>
+        <updated>20160218072805</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

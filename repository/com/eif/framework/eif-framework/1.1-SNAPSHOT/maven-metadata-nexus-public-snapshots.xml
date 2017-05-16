@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.eif.framework</groupId>
+  <artifactId>eif-framework</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20160302.031442</timestamp>
+      <buildNumber>39</buildNumber>
+    </snapshot>
+    <lastUpdated>20160302031442</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.1-20160302.031442-39</value>
+        <updated>20160302031442</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.1-20160302.031442-39</value>
+        <updated>20160302031442</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>1.1-20160302.031442-39</value>
+        <updated>20160302031442</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

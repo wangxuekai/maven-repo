@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.eif.framework</groupId>
+		<artifactId>eif-framework-parent</artifactId>
+		<version>1.4.2</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>eif-framework-pom</artifactId>
+	<packaging>pom</packaging>
+	<name>base pom</name>
+
+	<properties>
+		<!-- commons -->
+		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<commons-httpclient.version>3.1</commons-httpclient.version>
+
+		<!-- db -->
+		<druid.version>1.0.11</druid.version>
+		<mybatis-spring.version>1.2.2</mybatis-spring.version>
+		<mybatis-ehcache.version>1.0.0</mybatis-ehcache.version>
+		<mapper.version>3.8.2</mapper.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
+		<spring-data-jpa.version>1.6.1.RELEASE</spring-data-jpa.version>
+
+		<!-- zk -->
+		<zkclient.version>0.1</zkclient.version>
+		<!-- <zkclient.101.version>0.7</zkclient.101.version> -->
+
+		<!-- others -->
+		<jackson.version>1.9.13</jackson.version>
+		<orika.core.version>1.4.5</orika.core.version>
+		<shiro.version>1.2.3</shiro.version>
+		<!-- <captchacenter.version>1.0</captchacenter.version> -->
+		<!-- <httpclient.version>4.2.5</httpclient.version> <fastjson.version>1.2.2</fastjson.version> -->
+		<!-- <servlet-api.version>2.5</servlet-api.version> <gson.version>1.6</gson.version> -->
+		<!-- <javassist.version>3.19.0-GA</javassist.version> -->
+		<apollo.version>1.0.12</apollo.version>
+		<leveldb-api.version>0.7</leveldb-api.version>
+		<leveldbjni-all.version>1.8</leveldbjni-all.version>
+		<xmlworker.version>5.5.7</xmlworker.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+		<poi.version>3.13</poi.version>
+		<joda-time.version>2.8.2</joda-time.version>
+		<sitemesh.version>2.4.2</sitemesh.version>
+		<cxf.version>2.2.10</cxf.version>
+		<xfire.version>1.2.6</xfire.version>
+		<ehcache-core.version>2.0.0</ehcache-core.version>
+
+		<!-- paycore -->
+		<PKIBASE.version>1.0</PKIBASE.version>
+		<CFCACertKitJS.version>1.0</CFCACertKitJS.version>
+		<bcprov-jdk14.version>1.51</bcprov-jdk14.version>
+		<axis.version>1.4</axis.version>
+		<javax.xml.rpc.version>3.2-b06</javax.xml.rpc.version>
+		<junrar.version>0.7</junrar.version>
+		<!-- <guava-concurrent.version>r03</guava-concurrent.version> -->
+		<xstream.version>1.4.3</xstream.version>
+		<googlecode.aviator.version>2.2.1</googlecode.aviator.version>
+		
+		<!-- igetui -->
+		<igetui.commons-codec.version>1.2</igetui.commons-codec.version>
+		<igetui.commons-configuration.version>1.6</igetui.commons-configuration.version>
+		<igetui.commons-logging.version>1.0.3</igetui.commons-logging.version>
+		<igetui.gexin-rp-sdk-base.version>4.0.0.3</igetui.gexin-rp-sdk-base.version>
+		<igetui.gexin-rp-sdk-http.version>4.0.1.0</igetui.gexin-rp-sdk-http.version>
+		<igetui.gexin-rp-sdk-template.version>4.0.0.3</igetui.gexin-rp-sdk-template.version>
+		<igetui.protobuf-java.version>2.5.0</igetui.protobuf-java.version>
+		<igetui.jackson-all.version>1.8.5</igetui.jackson-all.version>
+
+		<!-- google zxing -->
+		<com.warrenstrange.googleauth>0.5.0</com.warrenstrange.googleauth>
+		<com.google.zxing.javase>3.2.1</com.google.zxing.javase>
+
+		<!-- test -->
+		<junit.version>4.11</junit.version>
+		<mockito.version>1.10.19</mockito.version>
+		<com.h2database.h2>1.4.192</com.h2database.h2>
+		<org.dbunit.artifactId>2.5.2</org.dbunit.artifactId>
+		<org.powermock.powermock-api-mockito>1.6.4</org.powermock.powermock-api-mockito>
+		<org.powermock.powermock-module-junit4>1.6.4</org.powermock.powermock-module-junit4>
+		
+		<!-- goutong -->
+		<org.codehaus.groovy.groovy>2.1.7</org.codehaus.groovy.groovy>
+		<!-- maven -->
+		<!-- <mybatis-generator-maven-plugin.version>1.4.2</mybatis-generator-maven-plugin.version> 
+			<java.version>1.7</java.version> <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version> 
+			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding> -->
+		
+		<!-- omc -->
+		<net.sourceforge.javacsv>2.0</net.sourceforge.javacsv>	
+		
+		<!-- market-website -->
+		<weixin.java.mp>2.3.0</weixin.java.mp>
+		
+		<!-- mtp -->
+		<jwt.version>3.1.0</jwt.version>
+		
+		<!-- paycore oauth2 -->
+		<apache.oauth2.version>1.0.2</apache.oauth2.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- ==================== commons ==================== -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-httpclient</groupId>
+				<artifactId>commons-httpclient</artifactId>
+				<version>${commons-httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+
+			<!-- ==================== db ==================== -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+			<!-- mybatis -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis-spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-ehcache</artifactId>
+				<version>${mybatis-ehcache.version}</version>
+				<!-- <exclusions> <exclusion> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
+					</exclusion> </exclusions> -->
+			</dependency>
+			<dependency>
+				<groupId>tk.mybatis</groupId>
+				<artifactId>mapper</artifactId>
+				<version>${mapper.version}</version>
+			</dependency>
+			<!-- hibernate -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate.validator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>xml-apis</artifactId>
+						<groupId>xml-apis</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>xml-apis</artifactId>
+						<groupId>xml-apis</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- ==================== spring ==================== -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${spring-data-jpa.version}</version>
+			</dependency>
+
+			<!-- ==================== zk ==================== -->
+			<dependency>
+				<groupId>com.github.sgroschupf</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>${zkclient.version}</version>
+				<!-- <exclusions> <exclusion> <artifactId>log4j</artifactId> <groupId>log4j</groupId> 
+					</exclusion> </exclusions> -->
+			</dependency>
+			<!-- <dependency> <groupId>com.101tec</groupId> <artifactId>zkclient</artifactId> 
+				<version>${zkclient.101.version}</version> <exclusions> <exclusion> <artifactId>slf4j-log4j12</artifactId> 
+				<groupId>org.slf4j</groupId> </exclusion> </exclusions> </dependency> -->
+
+			<!-- ==================== shiro ==================== -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-core</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-web</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-ehcache</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-aspectj</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-quartz</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+
+			<!-- ==================== others ==================== -->
+			<dependency>
+				<groupId>ma.glasnost.orika</groupId>
+				<artifactId>orika-core</artifactId>
+				<version>${orika.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.knightliao.apollo</groupId>
+				<artifactId>apollo</artifactId>
+				<version>${apollo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.iq80.leveldb</groupId>
+				<artifactId>leveldb-api</artifactId>
+				<version>${leveldb-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.fusesource.leveldbjni</groupId>
+				<artifactId>leveldbjni-all</artifactId>
+				<version>${leveldbjni-all.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.itextpdf.tool</groupId>
+				<artifactId>xmlworker</artifactId>
+				<version>${xmlworker.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${javax.servlet-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${joda-time.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>opensymphony</groupId>
+				<artifactId>sitemesh</artifactId>
+				<version>${sitemesh.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<!-- cxf -->
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-api</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-common-schemas</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-common-utilities</artifactId>
+				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>spring-core</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>spring-beans</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>spring-context</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-bindings-soap</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-bindings-xml</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-core</artifactId>
+				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>spring-core</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-ws-addr</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-databinding-xmlbeans</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-frontend-jaxws</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-tools-common</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http-jetty</artifactId>
+				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>spring-web</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
+				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>spring-web</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache-core</artifactId>
+				<version>${ehcache-core.version}</version>
+			</dependency>
+			<!-- xfire -->
+			<dependency>
+				<groupId>org.codehaus.xfire</groupId>
+				<artifactId>xfire-all</artifactId>
+				<version>${xfire.version}</version>
+			</dependency> 
+			
+			<!-- ==================== paycore ==================== -->
+			<dependency>
+				<groupId>PKIBASE</groupId>
+				<artifactId>PKIBASE</artifactId>
+				<version>${PKIBASE.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>CFCACertKitJS</groupId>
+				<artifactId>CFCACertKitJS</artifactId>
+				<version>${CFCACertKitJS.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk14</artifactId>
+				<version>${bcprov-jdk14.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.axis</groupId>
+				<artifactId>axis</artifactId>
+				<version>${axis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>javax.xml.rpc</artifactId>
+				<version>${javax.xml.rpc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.junrar</groupId>
+				<artifactId>junrar</artifactId>
+				<version>${junrar.version}</version>
+			</dependency>
+			<!-- <dependency> <groupId>com.google.guava</groupId> <artifactId>guava-concurrent</artifactId> 
+				<version>${guava-concurrent.version}</version> </dependency> -->
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>${xstream.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.googlecode.aviator</groupId>
+				<artifactId>aviator</artifactId>
+				<version>${googlecode.aviator.version}</version>
+			</dependency>
+			<!-- ==================== igetui ==================== -->
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${igetui.commons-codec.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>commons-configuration</artifactId>
+				<version>${igetui.commons-configuration.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${igetui.commons-logging.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>gexin-rp-sdk-base</artifactId>
+				<version>${igetui.gexin-rp-sdk-base.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>gexin-rp-sdk-http</artifactId>
+				<version>${igetui.gexin-rp-sdk-http.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>gexin-rp-sdk-template</artifactId>
+				<version>${igetui.gexin-rp-sdk-template.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>protobuf-java</artifactId>
+				<version>${igetui.protobuf-java.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.igetui</groupId>
+				<artifactId>jackson-all</artifactId>
+				<version>${igetui.jackson-all.version}</version>
+			</dependency>
+
+			<!-- ==================== google zxing ==================== -->
+			<dependency>
+				<groupId>com.warrenstrange</groupId>
+				<artifactId>googleauth</artifactId>
+				<version>${com.warrenstrange.googleauth}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>javase</artifactId>
+				<version>${com.google.zxing.javase}</version>
+			</dependency>
+		
+			<!-- ==================== test to be removed ==================== -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>${com.h2database.h2}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.dbunit</groupId>
+				<artifactId>dbunit</artifactId>
+				<version>${org.dbunit.artifactId}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.powermock</groupId>
+				<artifactId>powermock-api-mockito</artifactId>
+				<version>${org.powermock.powermock-api-mockito}</version>
+				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.mockito</groupId>
+						<artifactId>mockito-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.hamcrest</groupId>
+						<artifactId>hamcrest-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>junit</groupId>
+						<artifactId>junit</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.powermock</groupId>
+				<artifactId>powermock-module-junit4</artifactId>
+				<version>${org.powermock.powermock-module-junit4}</version>
+				<scope>test</scope>
+			</dependency>
+
+		
+			<!-- ==================== goutong ==================== -->
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy</artifactId>
+				<version>${org.codehaus.groovy.groovy}</version>
+			</dependency>
+		
+			<dependency>
+				<groupId>org.freemarker</groupId>
+				<artifactId>freemarker</artifactId>
+				<version>${org.freemarker.freemarker}</version>
+			</dependency>
+			<!-- ==================== omc ==================== -->
+			<dependency>
+				<groupId>net.sourceforge.javacsv</groupId>
+				<artifactId>javacsv</artifactId>
+				<version>${net.sourceforge.javacsv}</version>
+			</dependency>
+			
+			<!-- ==================== market-website ==================== -->
+			<dependency>
+    			<groupId>com.github.binarywang</groupId>
+    			<artifactId>weixin-java-mp</artifactId>
+    			<version>${weixin.java.mp}</version>
+			</dependency>
+			
+			<!-- ==================== mtp ==================== -->
+			<dependency>
+    			<groupId>com.auth0</groupId>
+   				<artifactId>java-jwt</artifactId>
+    			<version>${jwt.version}</version>
+			</dependency>
+			
+			<!-- ==================== pc oauth2 ==================== -->
+			<dependency>
+                <groupId>org.apache.oltu.oauth2</groupId>
+                <artifactId>org.apache.oltu.oauth2.authzserver</artifactId>
+                <version>${apache.oauth2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.oltu.oauth2</groupId>
+                <artifactId>org.apache.oltu.oauth2.common</artifactId>
+                <version>${apache.oauth2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.oltu.oauth2</groupId>
+                <artifactId>org.apache.oltu.oauth2.client</artifactId>
+				<version>${apache.oauth2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.oltu.oauth2</groupId>
+                <artifactId>org.apache.oltu.oauth2.resourceserver</artifactId>
+                <version>${apache.oauth2.version}</version>
+            </dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+</project>

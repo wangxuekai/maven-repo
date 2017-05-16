@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.eif.framework</groupId>
+		<artifactId>eif-framework-plugin-pom</artifactId>
+		<version>1.4.2</version>
+	</parent>
+	
+	<groupId>com.ecf.cfis</groupId>
+	<artifactId>ecf-cfis</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>ecf-cfis</name>
+
+	<properties>
+		<!-- maven -->
+		<mybatis-generator-maven-plugin.version>1.3.3</mybatis-generator-maven-plugin.version>
+		<java.version>1.7</java.version>
+		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- self -->
+		<ecf.cfis.dal.version>1.1-SNAPSHOT</ecf.cfis.dal.version>
+		<ecf.cfis.facade.version>1.1-SNAPSHOT</ecf.cfis.facade.version>
+		<ecf.cfis.integration.version>1.1-SNAPSHOT</ecf.cfis.integration.version>
+		<ecf.cfis.util.version>1.1-SNAPSHOT</ecf.cfis.util.version>
+		<ecf.cfis.service.version>1.1-SNAPSHOT</ecf.cfis.service.version>
+		<ecf.cfis.biz.version>1.1-SNAPSHOT</ecf.cfis.biz.version>
+		<ecf.cfis.test.version>1.1-SNAPSHOT</ecf.cfis.test.version>
+		<ecf.cfis.web.version>1.1-SNAPSHOT</ecf.cfis.web.version>
+
+		<!-- ecf -->
+		<eif.framework.version>1.4.2</eif.framework.version>
+
+		<!-- doc help -->
+		<ecf.dochelp.systemname>ecf-cfis</ecf.dochelp.systemname>
+		<ecf.dochelp.branchname>master</ecf.dochelp.branchname>
+		<ecf.dochelp.searchengine>http://120.26.85.179:99/solr/apidocs</ecf.dochelp.searchengine>
+		
+		<packaging.all>war</packaging.all>
+		<skip.it>false</skip.it>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- ==================== self ==================== -->
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-dal</artifactId>
+				<version>${ecf.cfis.dal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-facade</artifactId>
+				<version>${ecf.cfis.facade.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-biz</artifactId>
+				<version>${ecf.cfis.biz.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-integration</artifactId>
+				<version>${ecf.cfis.integration.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-util</artifactId>
+				<version>${ecf.cfis.util.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-service</artifactId>
+				<version>${ecf.cfis.service.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-test</artifactId>
+				<scope>test</scope>
+				<version>${ecf.cfis.test.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.cfis</groupId>
+				<artifactId>ecf-cfis-web</artifactId>
+				<version>${ecf.cfis.web.version}</version>
+			</dependency>
+
+			<!-- ==================== eif ==================== -->
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-pom</artifactId>
+				<version>${eif.framework.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-config</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-cache</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-mq</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-common-utils</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-data</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-log</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-mybatis-pagination</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-rpc</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-test</artifactId>
+				<scope>test</scope>
+				<version>${eif.framework.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>ecf-cfis-util</module>
+		<module>ecf-cfis-dal</module>
+		<module>ecf-cfis-facade</module>
+		<module>ecf-cfis-integration</module>
+		<module>ecf-cfis-service</module>
+		<module>ecf-cfis-biz</module>
+		<module>ecf-cfis-test</module>
+		<module>ecf-cfis-web</module>
+	</modules>
+
+</project>

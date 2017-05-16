@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Apr 27 15:33:17 CST 2017
+http\://nexus.hengjs.com/nexus/content/groups/public/.error=Could not transfer artifact com.eif.framework\:eif-framework-log\:jar\:1.4.1-20161020.023657-7 from/to nexus-public-snapshots (http\://nexus.hengjs.com/nexus/content/groups/public/)\: GET request of\: com/eif/framework/eif-framework-log/1.4.1-SNAPSHOT/eif-framework-log-1.4.1-20161020.023657-7.jar from nexus-public-snapshots failed
+@default-nexus-public-snapshots-http\://nexus.hengjs.com/nexus/content/groups/public/.lastUpdated=1493278397198

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.eif.framework</groupId>
+		<artifactId>eif-framework-plugin-pom</artifactId>
+		<version>1.4.2</version>
+	</parent>
+	
+	<groupId>com.ecf.ucenter</groupId>
+	<artifactId>ecf-ucenter</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>ecf-ucenter</name>
+
+	<properties>
+		<!-- maven -->
+		<mybatis-generator-maven-plugin.version>1.3.3</mybatis-generator-maven-plugin.version>
+		<java.version>1.7</java.version>
+		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- self -->
+		<ecf.ucenter.dal.version>1.1-SNAPSHOT</ecf.ucenter.dal.version>
+		<ecf.ucenter.facade.version>1.1-SNAPSHOT</ecf.ucenter.facade.version>
+		<ecf.ucenter.integration.version>1.1-SNAPSHOT</ecf.ucenter.integration.version>
+		<ecf.ucenter.util.version>1.1-SNAPSHOT</ecf.ucenter.util.version>
+		<ecf.ucenter.service.version>1.1-SNAPSHOT</ecf.ucenter.service.version>
+		<ecf.ucenter.biz.version>1.1-SNAPSHOT</ecf.ucenter.biz.version>
+		<ecf.ucenter.test.version>1.1-SNAPSHOT</ecf.ucenter.test.version>
+		<ecf.ucenter.web.version>1.1-SNAPSHOT</ecf.ucenter.web.version>
+
+		<!-- eif -->
+		<eif.framework.version>1.4.2</eif.framework.version>
+
+		<!-- doc help -->
+		<eif.dochelp.systemname>ecf-ucenter</eif.dochelp.systemname>
+		<eif.dochelp.branchname>master</eif.dochelp.branchname>
+		<eif.dochelp.searchengine>http://120.26.85.179:99/solr/apidocs</eif.dochelp.searchengine>
+		
+		<packaging.all>war</packaging.all>
+		<skip.it>false</skip.it>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- ==================== self ==================== -->
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-dal</artifactId>
+				<version>${ecf.ucenter.dal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-facade</artifactId>
+				<version>${ecf.ucenter.facade.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-biz</artifactId>
+				<version>${ecf.ucenter.biz.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-integration</artifactId>
+				<version>${ecf.ucenter.integration.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-util</artifactId>
+				<version>${ecf.ucenter.util.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-service</artifactId>
+				<version>${ecf.ucenter.service.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-test</artifactId>
+				<scope>test</scope>
+				<version>${ecf.ucenter.test.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecf.ucenter</groupId>
+				<artifactId>ecf-ucenter-web</artifactId>
+				<version>${ecf.ucenter.web.version}</version>
+			</dependency>
+
+			<!-- ==================== eif ==================== -->
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-pom</artifactId>
+				<version>${eif.framework.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-config</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-cache</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-mq</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-common-utils</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-data</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-log</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-mybatis-pagination</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-rpc</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-test</artifactId>
+				<scope>test</scope>
+				<version>${eif.framework.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>ecf-ucenter-util</module>
+		<module>ecf-ucenter-dal</module>
+		<module>ecf-ucenter-facade</module>
+		<module>ecf-ucenter-integration</module>
+		<module>ecf-ucenter-service</module>
+		<module>ecf-ucenter-biz</module>
+		<module>ecf-ucenter-test</module>
+		<module>ecf-ucenter-web</module>
+	</modules>
+
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.eif.framework</groupId>
+  <artifactId>eif-framework-rpc</artifactId>
+  <version>1.4.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20161020.023650</timestamp>
+      <buildNumber>7</buildNumber>
+    </snapshot>
+    <lastUpdated>20161020023650</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.4.1-20161020.023650-7</value>
+        <updated>20161020023650</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.4.1-20161020.023650-7</value>
+        <updated>20161020023650</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

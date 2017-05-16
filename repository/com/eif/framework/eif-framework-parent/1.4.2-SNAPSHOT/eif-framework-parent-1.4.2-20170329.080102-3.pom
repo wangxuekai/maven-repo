@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.eif.framework</groupId>
+	<artifactId>eif-framework-parent</artifactId>
+	<version>1.4.2-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>parent</name>
+
+	<properties>
+		<!-- eif -->
+		<eif.framework.version>1.4.2-SNAPSHOT</eif.framework.version>
+		<eif.framework.config.version>1.4.2-SNAPSHOT</eif.framework.config.version>
+		<eif.framework.cache.version>1.4.2-SNAPSHOT</eif.framework.cache.version>
+		<eif.framework.mq.version>1.4.2-SNAPSHOT</eif.framework.mq.version>
+		<eif.framework.kafka.version>1.4.2-SNAPSHOT</eif.framework.kafka.version>
+		<eif.framework.concurrent.version>1.4.2-SNAPSHOT</eif.framework.concurrent.version>		
+		<eif.framework.kv.version>1.4.2-SNAPSHOT</eif.framework.kv.version>		
+		<eif.framework.fs.version>1.4.2-SNAPSHOT</eif.framework.fs.version>
+		<eif.framework.job.version>1.4.2-SNAPSHOT</eif.framework.job.version>
+		<eif.framework.data.version>1.4.2-SNAPSHOT</eif.framework.data.version>
+		<eif.framework.log.version>1.4.2-SNAPSHOT</eif.framework.log.version>
+		<eif.framework.mybatis.pagination.version>1.4.2-SNAPSHOT</eif.framework.mybatis.pagination.version>
+		<eif.framework.common.utils.version>1.4.2-SNAPSHOT</eif.framework.common.utils.version>
+		<eif.framework.rpc.version>1.4.2-SNAPSHOT</eif.framework.rpc.version>
+		<eif.framework.test.version>1.4.2-SNAPSHOT</eif.framework.test.version>
+		<eif.framework.tcc.api.version>${project.version}</eif.framework.tcc.api.version>
+		<eif.framework.tcc.core.version>${project.version}</eif.framework.tcc.core.version>
+		<eif.framework.tcc.spring.version>${project.version}</eif.framework.tcc.spring.version>
+		
+		<!-- middleware -->
+		<dubbo.version>2.8.4</dubbo.version>
+		<rocketmq.version>3.3.4</rocketmq.version>
+		<codis.version>2.0.7</codis.version>
+		<jodis.version>0.2.0</jodis.version>
+		<jedis.version>2.7.3</jedis.version>
+		<cat.version>1.3.6.5</cat.version>
+		<disconf.version>2.6.31</disconf.version>
+		<lts.version>1.6.2.2</lts.version>
+		<curator.version>2.5.0</curator.version>
+		<zk.version>3.4.6</zk.version>
+
+		<!-- commons -->
+		<commons-codec.version>1.9</commons-codec.version>
+		<commons-collections.version>3.2.2</commons-collections.version>
+		<commons-fileupload.version>1.2.2</commons-fileupload.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons.lang.version>2.6</commons.lang.version>
+		<commons-logging.version>1.1.3</commons-logging.version>
+		<commons-pool.version>1.6</commons-pool.version>
+		<commons-pool2.version>2.3</commons-pool2.version>
+		<commons-lang3.version>3.4</commons-lang3.version>
+
+		<!-- spring -->
+		<spring.version>3.2.9.RELEASE</spring.version>
+		<spring-data-commons.version>1.8.1.RELEASE</spring-data-commons.version>
+
+		<!-- mybatis -->
+		<mybatis.version>3.2.8</mybatis.version>
+		<mysql.version>5.1.25</mysql.version>
+		
+		<!-- cache -->
+		<ehcache-core.version>2.0.0</ehcache-core.version>
+
+		<!-- log -->
+		<logback.version>1.0.13</logback.version>
+		<logback.contrib.version>0.1.2</logback.contrib.version>
+		<slf4.version>1.7.5</slf4.version>
+
+		<!-- others -->
+		<annotations.version>2.0.1</annotations.version>
+		<aopalliance.version>1.0</aopalliance.version>
+		<aspectj.version>1.7.4</aspectj.version>
+		<c3p0.version>0.9.5.1</c3p0.version>
+		<cglib.version>2.2.2</cglib.version>
+		<dom4j.version>1.6.1</dom4j.version>
+		<fastjson.version>1.1.41</fastjson.version>
+		<gson.version>2.2.4</gson.version>
+		<guava.version>18.0</guava.version>
+		<httpclient.version>4.5.1</httpclient.version>
+		<!-- <httpcore.version>4.4.3</httpcore.version> -->
+		<jackson-annotations.version>2.4.0</jackson-annotations.version>
+		<jackson-core.version>2.4.3</jackson-core.version>
+		<jackson-databind.version>2.4.3</jackson-databind.version>
+		<javassist.version>3.18.2-GA</javassist.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+		<jcraft.version>0.1.42</jcraft.version>
+		<jline.version>0.9.94</jline.version>
+		<jsch.version>0.1.42</jsch.version>
+		<jsqlparser.version>0.9</jsqlparser.version>
+		<netty3.version>3.7.0.Final</netty3.version>
+		<netty4.version>4.0.24.Final</netty4.version>
+		<reflections.version>0.9.9-RC1</reflections.version>
+		<!-- <xml-apis.version>1.0.b2</xml-apis.version> -->
+		<hystrix.version>1.4.21</hystrix.version>
+		<kryo.version>4.0.0</kryo.version>
+        <quartz.version>1.8.6</quartz.version>
+
+		<!-- maven -->
+		<java.version>1.7</java.version>
+		<junit.version>4.11</junit.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+		
+		<!-- goutong -->
+		<org.freemarker.freemarker>2.3.19</org.freemarker.freemarker>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- ==================== eif ==================== -->
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework</artifactId>
+				<version>${eif.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-config</artifactId>
+				<version>${eif.framework.config.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-cache</artifactId>
+				<version>${eif.framework.cache.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-mq</artifactId>
+				<version>${eif.framework.mq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-kafka</artifactId>
+				<version>${eif.framework.kafka.version}</version>
+			</dependency>			
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-concurrent</artifactId>
+				<version>${eif.framework.concurrent.version}</version>
+			</dependency>					
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-kv</artifactId>
+				<version>${eif.framework.kv.version}</version>
+			</dependency>					
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-fs</artifactId>
+				<version>${eif.framework.fs.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-fs-g</artifactId>
+				<version>${eif.framework.fs.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-job</artifactId>
+				<version>${eif.framework.job.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-data</artifactId>
+				<version>${eif.framework.data.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-log</artifactId>
+				<version>${eif.framework.log.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-mybatis-pagination</artifactId>
+				<version>${eif.framework.mybatis.pagination.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-common-utils</artifactId>
+				<version>${eif.framework.common.utils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-rpc</artifactId>
+				<version>${eif.framework.rpc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-tcc-api</artifactId>
+				<version>${eif.framework.tcc.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-tcc-core</artifactId>
+				<version>${eif.framework.tcc.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-tcc-spring</artifactId>
+				<version>${eif.framework.tcc.spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.eif.framework</groupId>
+				<artifactId>eif-framework-test</artifactId>
+				<version>${eif.framework.test.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<!-- ==================== middleware ==================== -->
+			<!-- dubbo -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>${dubbo.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>log4j</artifactId>
+						<groupId>log4j</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>httpclient</artifactId>
+						<groupId>org.apache.httpcomponents</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>httpcore</artifactId>
+						<groupId>org.apache.httpcomponents</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- rmq -->
+			<dependency>
+				<groupId>com.alibaba.rocketmq</groupId>
+				<artifactId>rocketmq-client</artifactId>
+				<version>${rocketmq.version}</version>
+				<!-- <exclusions> <exclusion> <groupId>org.apache.curator</groupId> <artifactId>curator-framework</artifactId> 
+					</exclusion> <exclusion> <groupId>org.apache.curator</groupId> <artifactId>curator-recipes</artifactId> 
+					</exclusion> <exclusion> <groupId>org.apache.curator</groupId> <artifactId>curator-client</artifactId> 
+					</exclusion> </exclusions> -->
+			</dependency>
+			<!-- jodis -->
+			<dependency>
+				<groupId>com.wandoulabs.jodis</groupId>
+				<artifactId>jodis</artifactId>
+				<version>${jodis.version}</version>
+			</dependency>
+			<!-- jedis -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${jedis.version}</version>
+			</dependency>
+			<!-- cat -->
+			<!-- <dependency> <groupId>com.dianping.cat</groupId> <artifactId>cat-client</artifactId> 
+				<version>${cat.version}</version> <exclusions> <exclusion> <artifactId>log4j</artifactId> 
+				<groupId>log4j</groupId> </exclusion> </exclusions> </dependency> -->
+			<!-- <dependency> <groupId>com.dianping.cat</groupId> <artifactId>cat-consumer</artifactId> 
+				<version>${cat.version}</version> <exclusions> <exclusion> <artifactId>log4j</artifactId> 
+				<groupId>log4j</groupId> </exclusion> <exclusion> <artifactId>slf4j-log4j12</artifactId> 
+				<groupId>org.slf4j</groupId> </exclusion> <exclusion> <artifactId>httpclient</artifactId> 
+				<groupId>org.apache.httpcomponents</groupId> </exclusion> </exclusions> </dependency> -->
+			<dependency>
+				<groupId>com.dianping.cat</groupId>
+				<artifactId>cat-core</artifactId>
+				<version>${cat.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>log4j</artifactId>
+						<groupId>log4j</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- disconf -->
+			<dependency>
+				<groupId>com.baidu.disconf</groupId>
+				<artifactId>disconf-client</artifactId>
+				<version>${disconf.version}</version>
+			</dependency>
+			<!-- lts -->
+			<dependency>
+				<groupId>com.lts</groupId>
+				<artifactId>lts</artifactId>
+				<version>${lts.version}</version>
+			</dependency>
+			<!-- curator -->
+			<dependency>
+				<artifactId>curator-client</artifactId>
+				<groupId>org.apache.curator</groupId>
+				<version>${curator.version}</version>
+			</dependency>
+			<dependency>
+				<artifactId>curator-framework</artifactId>
+				<groupId>org.apache.curator</groupId>
+				<version>${curator.version}</version>
+			</dependency>
+			<dependency>
+				<artifactId>curator-recipes</artifactId>
+				<groupId>org.apache.curator</groupId>
+				<version>${curator.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.zookeeper</groupId>
+						<artifactId>zookeeper</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- zk -->
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>${zk.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-log4j12</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- ==================== commons ==================== -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commons.lang.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>${commons-collections.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-pool2</artifactId>
+				<version>${commons-pool2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commons-logging.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+
+			<!-- ==================== spring ==================== -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<!-- spring data -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-commons</artifactId>
+				<version>${spring-data-commons.version}</version>
+			</dependency>
+
+			<!-- ==================== mybatis ==================== -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			
+			<!-- ==================== cache ==================== -->
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache-core</artifactId>
+				<version>${ehcache-core.version}</version>
+			</dependency>
+
+			<!-- ==================== log ==================== -->
+			<!-- slf4j -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4.version}</version>
+			</dependency>
+			<!-- logback -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<!-- logback contrib -->
+			<dependency>
+				<groupId>ch.qos.logback.contrib</groupId>
+				<artifactId>logback-json-classic</artifactId>
+				<version>${logback.contrib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback.contrib</groupId>
+				<artifactId>logback-jackson</artifactId>
+				<version>${logback.contrib.version}</version>
+			</dependency>
+
+			<!-- ==================== others ==================== -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>${cglib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.jcraft</groupId>
+				<artifactId>jsch</artifactId>
+				<version>${jcraft.version}</version>
+			</dependency>
+			<!-- jackson -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson-databind.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson-annotations.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson-core.version}</version>
+			</dependency>
+			<!-- netty -->
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty</artifactId>
+				<version>${netty3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-all</artifactId>
+				<version>${netty4.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>jline</groupId>
+				<artifactId>jline</artifactId>
+				<version>${jline.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.jcraft</groupId>
+				<artifactId>jsch</artifactId>
+				<version>${jsch.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.jsqlparser</groupId>
+				<artifactId>jsqlparser</artifactId>
+				<version>${jsqlparser.version}</version>
+			</dependency>
+			<!-- aspectj -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjtools</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>${dom4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>${gson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.reflections</groupId>
+				<artifactId>reflections</artifactId>
+				<version>${reflections.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>${javassist.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>annotations</artifactId>
+				<version>${annotations.version}</version>
+			</dependency>
+			<!-- <dependency> <groupId>xml-apis</groupId> <artifactId>xml-apis</artifactId> 
+				<version>${xml-apis.version}</version> </dependency> -->
+			<dependency>
+				<groupId>aopalliance</groupId>
+				<artifactId>aopalliance</artifactId>
+				<version>${aopalliance.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+			<!-- hystrix -->
+			<dependency>
+				<groupId>com.netflix.hystrix</groupId>
+				<artifactId>hystrix-core</artifactId>
+				<version>${hystrix.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netflix.hystrix</groupId>
+				<artifactId>hystrix-javanica</artifactId>
+				<version>${hystrix.version}</version>
+			</dependency>
+			<!-- kryo -->
+			<dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kryo.version}</version>
+            </dependency>
+            <!-- quartz -->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+                <exclusions>
+					<exclusion>
+						<artifactId>slf4j-api</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>c3p0</artifactId>
+						<groupId>c3p0</groupId>
+					</exclusion>
+				</exclusions>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Nexus Releases Repository</name>
+			<url>http://nexus.hengjs.com/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshots Repository</name>
+			<url>http://nexus.hengjs.com/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>utf8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>eif-framework-test</module>
+		<module>eif-framework-common-utils</module>
+		<module>eif-framework-concurrent</module>
+		<module>eif-framework-kv</module>		
+		<module>eif-framework-config</module>
+		<module>eif-framework-cache</module>
+		<module>eif-framework-mq</module>
+		<module>eif-framework-kafka</module>		
+		<module>eif-framework-job</module>
+		<module>eif-framework-fs</module>
+		<module>eif-framework-fs-g</module>
+		<module>eif-framework-data</module>
+		<module>eif-framework-log</module>
+		<module>eif-framework-mybatis-pagination</module>
+		<module>eif-framework-rpc</module>
+		<module>eif-framework-pom</module>
+		<module>eif-framework-tcc</module>
+		<module>eif-framework-sagas</module>
+		<module>eif-framework</module>
+		<module>eif-framework-plugin-pom</module>
+	</modules>
+</project>

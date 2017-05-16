@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>ecf-ucenter</artifactId>
+		<groupId>com.ecf.ucenter</groupId>
+		<version>1.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ecf-ucenter-facade</artifactId>
+	<packaging>jar</packaging>
+	<name>facade layer</name>
+
+	<dependencies>
+
+		<!-- 请注意，facade层不应该出现太多jar的依赖，请保持facade的纯洁 -->
+
+		<!-- ==================== eif ==================== -->
+		<dependency>
+			<groupId>com.eif.framework</groupId>
+			<artifactId>eif-framework-common-utils</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>zookeeper</artifactId>
+					<groupId>org.apache.zookeeper</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>curator-recipes</artifactId>
+					<groupId>org.apache.curator</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>mybatis</artifactId>
+					<groupId>org.mybatis</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jsqlparser</artifactId>
+					<groupId>com.github.jsqlparser</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jsch</artifactId>
+					<groupId>com.jcraft</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-beans</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-io</artifactId>
+					<groupId>commons-io</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang</artifactId>
+					<groupId>commons-lang</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Nexus Releases Repository</name>
+			<url>http://nexus.hengjs.com/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshots Repository</name>
+			<url>http://nexus.hengjs.com/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+					<doclet>com.eif.dochelp.HtmlDoclet</doclet>
+					<docletArtifact>
+						<groupId>com.eif.dochelp</groupId>
+						<artifactId>eif-dochelp</artifactId>
+						<version>1.0.1</version>
+					</docletArtifact>
+					<useStandardDocletOptions>false</useStandardDocletOptions>
+					<additionalparam>
+						-systemname ${eif.dochelp.systemname}-facade
+						-branchname ${eif.dochelp.branchname}
+						-encoding utf-8
+						-charset utf-8
+						-d ${project.basedir}/target/apidocs
+						-searchengine ${eif.dochelp.searchengine}
+						-dubboconfigpath ${project.basedir}/../ecf-ucenter-biz/src/main/resources/spring/applicationContext-dubbo-provider.xml
+					</additionalparam>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
